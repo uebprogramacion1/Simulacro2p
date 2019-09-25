@@ -1,0 +1,4 @@
+Nombre: juan
+Numero Adivinar: 4310
+Numero Intentos: 10
+El Jugador ha perdido
