@@ -15,7 +15,7 @@ public class Controlador implements ActionListener{
 	private int contador=2;		
 	private int[] numerosParaAdivinar;
 	private String ruta;
-	private String estado="";//perdió o ganó.
+	private String estado="Perdió";//perdió o ganó.
 	
 	public Controlador() {		
 		gui = new InterfazGUI(this);		
@@ -44,10 +44,7 @@ public class Controlador implements ActionListener{
 				gui.getPanelEntrada().getTxtNumerosParaProbar0().setText("");						
 				gui.getPanelEntrada().getLabIntento1().setText("Intento "+contador);				
 				contador++;					
-			} else {				
-				estado="Perdió";
-			}
-
+			} 
 		mundo.getResultado().escribirResultados(gui.getPanelEntrada().getTxtNombreJugador().getText(), numerosParaAdivinar, contador, estado);
 		if(contador==12) {
 			gui.imprimirResultados(mundo.getLec().leerResultados(ruta));

@@ -52,7 +52,7 @@ public class InterfazGUI extends JFrame{
 	}
 
 	public void imprimirResultados(String resultado){
-		JOptionPane.showMessageDialog(null, "Los resultados son: "+resultado);
+		JOptionPane.showMessageDialog(null, resultado);
 	}
 
 }
