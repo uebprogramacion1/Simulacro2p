@@ -1,45 +1,24 @@
 package mundo;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.swing.filechooser.FileNameExtensionFilter;
+import java.io.*;
 
 public class Lectura {
-	String linea;
-	String ta;
 	
-	public String leerResultados(String ruta){
-		
-			try{
-				
-				FileReader fr = new FileReader(ruta);
-				BufferedReader br = new BufferedReader(fr);
-				
-				 while((linea=br.readLine())!= null){ 
-					 System.out.println(linea);
-			          } 	  
-			         br.close();
-			            
-			         return linea;   
-			            
-				} catch (IOException e){}
-					return null;
-					
-				}
-
-
-	public String getLinea() {
-		return linea;
-	}
-
-
-	public void setLinea(String linea) {
-		this.linea = linea;
+	private FileReader fileReader;
+	private BufferedReader bufferedReader;
+	
+	private String linea;
+	
+	public String leerResultados(String ruta){		
+		try{
+			fileReader = new FileReader(ruta);
+			bufferedReader = new BufferedReader(fileReader);
+			linea = bufferedReader.readLine();				  
+			fileReader.close();
+			} catch (IOException e){
+				System.out.println("error");
+			}
+			return linea;	
 	}
 		
 		

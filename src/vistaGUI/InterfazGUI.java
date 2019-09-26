@@ -25,7 +25,7 @@ public class InterfazGUI extends JFrame{
 
 	public InterfazGUI(Controlador control) {
 		
-		setSize(400, 200);
+		setSize(400, 220);
 		setResizable(false);
 		setTitle("Picas & Fijas");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
