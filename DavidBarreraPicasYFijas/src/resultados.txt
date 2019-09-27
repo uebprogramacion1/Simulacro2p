@@ -1,0 +1,4 @@
+Nombre: David
+Numero Adivinar: 4924
+Numero Intentos: 4
+El Jugador ha ganado
