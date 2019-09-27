@@ -3,6 +3,7 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
 
 import mundo.Mundo;
 import vistaGUI.InterfazGUI;
@@ -40,14 +41,18 @@ public class Controlador implements ActionListener{
 				gui.getPanelResultados().getTxtFijas().setText(fijas + "");				
 				if (fijas==4) {
 					estado = "Ganó";
-				}								
+					JOptionPane.showMessageDialog(null, "Usted ha ganado.");
+					gui.setVisible(false); // Que Dios perdone esta línea de código
+				}	
 				gui.getPanelEntrada().getTxtNumerosParaProbar0().setText("");						
 				gui.getPanelEntrada().getLabIntento1().setText("Intento "+contador);				
 				contador++;					
 			} 
 		mundo.getResultado().escribirResultados(gui.getPanelEntrada().getTxtNombreJugador().getText(), numerosParaAdivinar, contador, estado);
 		if(contador==12) {
+			JOptionPane.showMessageDialog(null, "Usted ha perdido.");
 			gui.imprimirResultados(mundo.getLec().leerResultados(ruta));
+			gui.setVisible(false); // gui.explode(true);
 		}
 		}
 		
