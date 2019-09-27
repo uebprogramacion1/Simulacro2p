@@ -15,9 +15,9 @@ public class Resultado {
 	
 	public void escribirResultados(String nommbreJugador, int[] numeroPorAdivinar, int totalIntentos, String estado){			
 		try {			
-			fileWriter = new FileWriter(resultados);			
+			fileWriter = new FileWriter(resultados,true);			
 			printWriter = new PrintWriter(fileWriter);			
-			printWriter.println(nommbreJugador + "; " + Arrays.toString(numeroPorAdivinar)+ "; "+ totalIntentos + "; " + estado);				
+			printWriter.println("Jugador: "+nommbreJugador + " || " +"Número por adivinar: "+ Arrays.toString(numeroPorAdivinar)+ " || "+"Total intentos: "+ totalIntentos + " || "+"Estado: " + estado);							
 			fileWriter.close();			
 		} catch (Exception e) {			
 			System.out.println("error");
